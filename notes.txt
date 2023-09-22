@@ -1,0 +1,12 @@
+GRPC:
+was invented, so that we dont need a HTTP client library for each of the different languages out there. bcoz the gRPC is language neutral and uses the protocol buffer formats, i.e converts into binary.
+
+==Protocol Buffer==
+Instead of passing the data in the form if Json objects, we can serialize the data using protocol buffers to pass the binary data. Which will save almost half the space compared to the json objects.
+
+the pbufs are language neutral and we just need a "protoc" which is the compiler and it will generate the schema i.e todo.proto file into todo_pb.js in our case.
+
+the cmd we used is:
+/Users/harshashetty/Downloads/protoc-24.3-osx-universal_binary/bin/protoc --js_out=import_style=commonjs,binary:. todo.proto
+
+This is bcoz as of now, we did not add protoc to the system path variable, therfore using its absolute path to generate the todo_pb.js file
